@@ -61,7 +61,7 @@
 | DELETE | /users/                | Delete user account                    | use auth headers for userId|
 
 
-[Brand] * /:id/ refers to the id of whatever that comes before /:id/ *
+[Movie] * /:id/ refers to the id of whatever that comes before /:id/ *
 | Method | Path                   | Purpose                         | Note                                    |
 |--------|------------------------|---------------------------------|-----------------------------------------|
 | GET    | /movies                | Get movie list from api         | 
