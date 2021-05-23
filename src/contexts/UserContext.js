@@ -6,19 +6,19 @@ const UserContext = createContext()
 const UserProvider = (props) => {
     const [user, setUser] = useState({})
 
-    // const fetchUser = () => {
-    //     if (!localStorage.getItem('userId')) { return }
+    const fetchUser = () => {
+        if (!localStorage.getItem('userId')) { return }
 
-    //     axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/verify`, {
-    //         headers: {
-    //             Authorization: localStorage.getItem('userId')
-    //         }
-    //     }).then((response) => {
-    //         setUser(response.data.user)
-    //     })
-    // }
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/verify`, {
+            headers: {
+                Authorization: localStorage.getItem('userId')
+            }
+        }).then((response) => {
+            setUser(response.data.user)
+        })
+    }
 
-    // useEffect(fetchUser, [])
+    useEffect(fetchUser, [])
 
 
     return (
