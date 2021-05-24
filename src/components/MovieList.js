@@ -10,24 +10,24 @@ const MovieList = () => {
     const [ romance, setRomance ] = useState([])
 
     const fetchAllMovies = () => {
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies/genres`)
         .then((response) => {
-            let movie = response.data.movies
+            let genre = response.data.genre
             let childrenMovies = []
             let horrorMovies = []
             let romanceMovies = []
-            
-            setAllMovies(response.data.movies)
-            for(let i=0; i < movie.length; i++){
+            // console.log(childrenMovies);
+            setAllMovies(response.data)
+            for(let i=0; i < genre.length; i++){
                 //filter genre by name and push movies into each genre
-                if(movie[i].genre.name.includes('Children & Family')){
-                    childrenMovies.push(movie[i])
+                if(genre[i].name.includes('Children & Family')){
+                    childrenMovies.push(genre[i].movies)
                     setChildren(childrenMovies)
-                } else if(movie[i].genre.name.includes('Horror')){
-                    horrorMovies.push(movie[i])
+                } else if(genre[i].name.includes('Horror')){
+                    horrorMovies.push(genre[i].movies)
                     setHorror(horrorMovies)
-                } else if(movie[i].genre.name.includes('Romance')){
-                    romanceMovies.push(movie[i])
+                } else if(genre[i].name.includes('Romance')){
+                    romanceMovies.push(genre[i].movies)
                     setRomance(romanceMovies)
                 }
             }
@@ -41,7 +41,7 @@ const MovieList = () => {
             <div className="childrenMovies">
             {
                 children.length ? 
-                children.map((movie) => {
+                children[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="children">
                                 <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
@@ -58,7 +58,7 @@ const MovieList = () => {
             <div className="horrorMovies">
             {
                 horror.length ? 
-                horror.map((movie) => {
+                horror[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="horror">
                                 <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
@@ -74,10 +74,24 @@ const MovieList = () => {
             <h1>Romance</h1>
             <div className="romanceMovies">
             {
-                romance.length ? 
-                romance.map((movie) => {
+                romance.length ?
+                romance[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="romance">
+                                <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                            </div>
+                })
+            :
+            <p>Loading</p>
+            }
+            </div>
+
+            {/* <div>
+            {
+                allMovies.length ? 
+                allMovies.map((movie) => {
+                    return  <div key={movie.id}
+                                 className="allMovies">
                                 <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
                             </div>
                 })
@@ -86,7 +100,7 @@ const MovieList = () => {
                     Loading...
                 </p>
             }
-            </div>
+            </div> */}
         </div>
     )
 }

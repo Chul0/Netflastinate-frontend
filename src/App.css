@@ -16,8 +16,8 @@
   text-align: center;
 }
 
-.movieContainer, .childrenMovies, .horrorMovies {
-  width: 900px;
+.movieContainer, .childrenMovies, .horrorMovies, .romanceMovies {
+  width: 100%;
   display:flex;
   flex-wrap: wrap;
   align-items: center;
