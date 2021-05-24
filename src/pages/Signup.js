@@ -1,8 +1,15 @@
-const Signup = () => {
+import SignupLoginForm from '../components/SignupLoginForm'
+
+const Signup = (props) => {
     return(
-        <div>
-            This is Signup
-        </div>
+        <SignupLoginForm 
+        showName={true}
+        // this true will be passed to props.showName in signuploginForm, and name input will be shown...
+        buttonText="SIGN UP"
+        route="/users"
+        message="You are successfully signed up!"
+        title="SIGN UP"
+        />
     )
 }
 

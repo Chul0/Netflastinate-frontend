@@ -9,7 +9,7 @@ const UserProvider = (props) => {
     const fetchUser = () => {
         if (!localStorage.getItem('userId')) { return }
 
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/verify`, {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/users`, {
             headers: {
                 Authorization: localStorage.getItem('userId')
             }
