@@ -74,17 +74,17 @@ const MovieList = () => {
             <h1>Romance</h1>
             <div className="romanceMovies">
             {
-                romance.length ?
+                romance.length ? 
                 romance.map((movie) => {
-                    return <div key={movie.id}
-                                className="romance">
-                                <img src={movie.image} />    
-                           </div> 
+                    return  <div key={movie.id}
+                                 className="romance">
+                                <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                            </div>
                 })
             :
                 <p>
                     Loading...
-                </p>    
+                </p>
             }
             </div>
         </div>
