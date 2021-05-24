@@ -45,6 +45,10 @@ const Popup = (props) => {
                         <h1>{singleMovie.movie.title}</h1>
                         <h3>{singleMovie.movie.plot}</h3>
                         <button onClick={()=> setRedirectToTrailer(true)}>Watch Trailer</button>
+                        {
+                        redirectToTrailer &&
+                        <Redirect to={`/movie/${singleMovie.movie.id}`} />
+                        }
                         
                     </dialog>
                 )}
@@ -55,10 +59,7 @@ const Popup = (props) => {
             </p>
             }
         </>
-            {
-                redirectToTrailer &&
-                <Redirect to='/movie/:id' />
-            }
+            
         </div>
     )
 }
