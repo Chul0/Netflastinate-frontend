@@ -22,11 +22,11 @@ const SignupLoginForm = (props) => {
             if(response.data.user){
                  localStorage.setItem('userId', response.data.userId)
                 alert(`Hi, ${response.data.user.name}! ${props.message}`)
+                window.location.reload()
             }
             else if(response.data.error){
                 setError(response.data.error)
             }
-            window.location.reload()
         })
     }
 
