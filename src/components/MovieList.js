@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 
+
 const MovieList = () => {
     const [ allMovies, setAllMovies ] = useState([])
     const [ children, setChildren ] = useState([])
@@ -44,7 +45,9 @@ const MovieList = () => {
                 children[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="children">
+                                <Link to ={`/movies/${movie.id}`}>
                                 <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                                </Link>
                             </div>
                 })
             :
@@ -61,7 +64,9 @@ const MovieList = () => {
                 horror[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="horror">
+                                <Link to ={`/movies/${movie.id}`}>
                                 <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                                </Link>
                             </div>
                 })
             :
@@ -78,7 +83,9 @@ const MovieList = () => {
                 romance[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="romance">
+                                <Link to ={`/movies/${movie.id}`}>
                                 <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                                </Link>
                             </div>
                 })
             :
@@ -86,21 +93,7 @@ const MovieList = () => {
             }
             </div>
 
-            {/* <div>
-            {
-                allMovies.length ? 
-                allMovies.map((movie) => {
-                    return  <div key={movie.id}
-                                 className="allMovies">
-                                <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
-                            </div>
-                })
-            :
-                <p>
-                    Loading...
-                </p>
-            }
-            </div> */}
+            
         </div>
     )
 }

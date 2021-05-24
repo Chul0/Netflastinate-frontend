@@ -12,6 +12,7 @@ import MyList from './pages/MyList'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 import SingleMovie from './pages/SingleMovie'
+import Popup from './components/Popup'
 
 function App() {
   const [user, setUser] = useContext(UserContext)
@@ -83,7 +84,7 @@ function App() {
       />
 
       <Route 
-        path="/movies/:id"
+        path="/movie/:id"
         render={()=>{
           if(user.id){
             return <SingleMovie />
@@ -94,6 +95,16 @@ function App() {
       />
 
 
+        <Route 
+          path="/movies/:id"
+          render={()=>{
+            if(user.id){
+              return <Popup />
+            }else{
+              return <Redirect to="/" />
+            }
+          }}
+        />
     </div>
   );
 }
