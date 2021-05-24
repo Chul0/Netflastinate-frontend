@@ -1,8 +1,9 @@
+import MovieList from '../components/MovieList'
+
 const Movies = () => {
+
     return(
-        <div>
-            This is Movies
-        </div>
+        <MovieList />
     )
 }
 
