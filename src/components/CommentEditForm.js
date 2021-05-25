@@ -12,7 +12,7 @@ const CommentEditForm = (props) => {
             description
         }, {
             headers: {
-                AUthorization: localStorage.getItem('userId')
+                Authorization: localStorage.getItem('userId')
             }
         })
         .then((response) => {

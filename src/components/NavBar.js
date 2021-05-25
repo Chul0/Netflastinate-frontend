@@ -9,7 +9,7 @@ const NavBar = () => {
         <nav>
             {user.id &&
                 <p>
-                    Hey {user.name}, welcome back!
+                    Hey {user.name.charAt(0).toUpperCase() + user.name.slice(1)}, welcome back!
                 </p>
             }
             <Link to='/'>HOME</Link>{' | '}

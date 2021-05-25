@@ -13,9 +13,9 @@ const SingleMovie = () => {
     const [shouldReload, setShouldReload] = useState(true)
     const [showCommentEdit, setShowCommentEdit] = useState(false)
 
-    const fetchSingleMovie = () => {
-        if(!shouldReload) { return }
 
+    //Get a selected movie info
+    const fetchSingleMovie = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies/${id}`)
         .then((response) => {
             setMovieInfo(response.data)
@@ -26,6 +26,7 @@ const SingleMovie = () => {
     useEffect(fetchSingleMovie, [])
     useEffect(fetchSingleMovie, [shouldReload])
 
+    //Save a movie to my list
     const saveMovies = (e) => {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/movies/${id}`,
         {},
@@ -37,8 +38,22 @@ const SingleMovie = () => {
         )
     }
 
+    //To show comment editing form
     const handleCommentEdit = () => {
         setShowCommentEdit(true)
+    }
+
+    //Delete a selected comment
+    const deleteComment = (commentId) => {
+        axios.delete(`${process.env.REACT_APP_BACKEND_URL}/movies/${id}/comment/${commentId}`,
+        {
+            headers: {
+                Authorization: localStorage.getItem('userId')
+            }
+        })
+        .then((response) => {
+            setShouldReload(true)
+        })
     }
 
     return(
@@ -85,7 +100,7 @@ const SingleMovie = () => {
                                             :
                                                 <>
                                                 <button onClick={handleCommentEdit}>EDIT</button>
-                                                <button>DELETE</button>
+                                                <button onClick={() => deleteComment(comment.id)}>DELETE</button>
                                                 </>
                                             }
                                             </>
