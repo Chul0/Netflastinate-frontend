@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { UserContext } from '../contexts/UserContext'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CommentForm from '../components/CommentForm'
+import CommentEditForm from '../components/CommentEditForm'
 
 
 const SingleMovie = () => {
     const { id } = useParams()
+    const [user, setUser ] = useContext(UserContext)
     const [movieInfo, setMovieInfo] = useState({})
     const [shouldReload, setShouldReload] = useState(true)
+    const [showCommentEdit, setShowCommentEdit] = useState(false)
 
     const fetchSingleMovie = () => {
         if(!shouldReload) { return }
@@ -31,6 +35,10 @@ const SingleMovie = () => {
             }
         }
         )
+    }
+
+    const handleCommentEdit = () => {
+        setShowCommentEdit(true)
     }
 
     return(
@@ -63,12 +71,31 @@ const SingleMovie = () => {
                         movieInfo.comments.map((comment) => {
                             return <div key={comment.id}>
                                         <div>
-                                        <p>{comment.user.name}{' | '}{comment.description}</p>
+                                        {/* Make the first letter of a name upper case */}
+                                        <p>{comment.user.name.charAt(0).toUpperCase() + comment.user.name.slice(1)}{' | '}{comment.description}</p>
+                                        {/* Print created date */}
                                         <p>{comment.createdAt.substr(0,10)}</p>
+
+                                        {user.id === comment.user.id &&
+                                            <>
+                                            { showCommentEdit ?
+                                                <CommentEditForm setShouldReload={setShouldReload}
+                                                commentId={comment.id}
+                                                setShowCommentEdit={setShowCommentEdit} />
+                                            :
+                                                <>
+                                                <button onClick={handleCommentEdit}>EDIT</button>
+                                                <button>DELETE</button>
+                                                </>
+                                            }
+                                            </>
+                                        }
                                         </div>
+
                                    </div>
                         })
                     }
+                    
                 </div>
             </div>
         </div>
