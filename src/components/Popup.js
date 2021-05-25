@@ -15,6 +15,7 @@ const Popup = (props) => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies/${id}`)
         .then((response) => {
             setSingleMovie(response.data)
+            window.scrollTo(0, 0)
         })
     }
 
