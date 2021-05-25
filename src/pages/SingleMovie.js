@@ -16,6 +16,17 @@ const SingleMovie = () => {
 
     useEffect(fetchSingleMovie, [])
 
+    const saveMovies = (e) => {
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/movies/${id}`,
+        {},
+        {
+            headers:{
+                Authorization: localStorage.getItem('userId')
+            }
+        }
+        )
+    }
+
     return(
         <div className="singleMovieContainer">
         <>
@@ -26,6 +37,7 @@ const SingleMovie = () => {
             <img src={movieInfo.movie.image}></img>
             <h3>{movieInfo.movie.plot}</h3>
             <iframe width="560" height="315" src={movieInfo.movie.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <button onClick={saveMovies}>Save to my list</button>
             </>
             :
             

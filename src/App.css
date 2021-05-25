@@ -17,7 +17,7 @@
 }
 
 .movieContainer, .childrenMovies, .horrorMovies, .romanceMovies {
-  width: 100%;
+  width: 900px;
   display:flex;
   flex-wrap: wrap;
   align-items: center;
