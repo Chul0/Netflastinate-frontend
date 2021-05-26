@@ -42,11 +42,13 @@ const Popup = (props) => {
                             <h1>{singleMovie.movie.title}</h1>
                         </div>
                         <div className="movieInfo">
+                            <abbr title="Click to close">
                             <img
                                 className="smallImage"
                                 src={singleMovie.movie.image}
                                 onClick={handlePopup}
                             />
+                            </abbr>
                             <div className="plotButton">
                                 <h3 id="plot">{singleMovie.movie.plot}</h3>
                                 <div className="trailerBtn">

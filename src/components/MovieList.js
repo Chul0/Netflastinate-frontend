@@ -46,7 +46,7 @@ const MovieList = () => {
     return(
         <div className="movieContainer">
             <div className="genre">
-                <h2 style={{margin:"3px"}}>Children & Family</h2>
+                <h2 style={{margin:"10px"}}>Children & Family</h2>
             </div>
             <div className="childrenMovies">
             {
