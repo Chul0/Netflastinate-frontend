@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react'
 
 
 
+
 const MovieList = () => {
     const [ allMovies, setAllMovies ] = useState([])
     const [ children, setChildren ] = useState([])
     const [ horror, setHorror ] = useState([])
     const [ romance, setRomance ] = useState([])
+    const [ thriller, setThriller ] = useState([])
 
     const fetchAllMovies = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies/genres`)
@@ -17,6 +19,7 @@ const MovieList = () => {
             let childrenMovies = []
             let horrorMovies = []
             let romanceMovies = []
+            let thrillerMovies = []
             // console.log(childrenMovies);
             setAllMovies(response.data)
             for(let i=0; i < genre.length; i++){
@@ -30,23 +33,27 @@ const MovieList = () => {
                 } else if(genre[i].name.includes('Romance')){
                     romanceMovies.push(genre[i].movies)
                     setRomance(romanceMovies)
+                } else if (genre[i].name.includes('Thriller')){
+                    thrillerMovies.push(genre[i].movies)
+                    setThriller(thrillerMovies)
                 }
             }
         })
     }
     useEffect(fetchAllMovies, [])
+    
 
     return(
         <div className="movieContainer">
-            <h1>Children & Family</h1>
-            <div className="childrenMovies">
+            <h2 style={{margin:"2px"}}>Children & Family</h2>
+            <div className="childrenMovies" style={{margin:"2px"}}>
             {
                 children.length ? 
                 children[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="children">
                                 <Link to ={`/movies/${movie.id}`}>
-                                <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                                <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
                                 </Link>
                             </div>
                 })
@@ -57,15 +64,15 @@ const MovieList = () => {
             }
             </div>
 
-            <h1>Horror</h1>
-            <div className="horrorMovies">
+            <h2 style={{margin:"2px"}}>Horror</h2>
+            <div className="horrorMovies" style={{margin:"2px"}}>
             {
                 horror.length ? 
                 horror[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="horror">
                                 <Link to ={`/movies/${movie.id}`}>
-                                <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                                <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
                                 </Link>
                             </div>
                 })
@@ -76,23 +83,39 @@ const MovieList = () => {
             }
             </div>
 
-            <h1>Romance</h1>
-            <div className="romanceMovies">
+            <h2 style={{margin:"2px"}}>Romance</h2>
+            <div className="romanceMovies" style={{margin:"2px"}}>
             {
                 romance.length ?
                 romance[0].map((movie) => {
                     return  <div key={movie.id}
                                  className="romance">
                                 <Link to ={`/movies/${movie.id}`}>
-                                <img src={movie.image} style={{width:"200px", height:"250px", margin:"5px"}} />
+                                <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
                                 </Link>
                             </div>
                 })
             :
-            <p>Loading</p>
+            <p>Loading...</p>
             }
             </div>
 
+            <h2 style={{margin:"2px"}}>Thriller</h2>
+            <div className="thrillerMovies" style={{margin:"2px"}}>
+            {
+                thriller.length ?
+                thriller[0].map((movie) => {
+                    return  <div key={movie.id}
+                                 className="thriller">
+                                <Link to ={`/movies/${movie.id}`}>
+                                <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
+                                </Link>
+                            </div>
+                })
+            :
+            <p>Loading...</p>
+            }
+            </div>
             
         </div>
     )
