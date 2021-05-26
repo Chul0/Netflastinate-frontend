@@ -90,7 +90,7 @@ a:hover {
   padding: 0;
 }
 
-.popup img{
+.smallImage{
   width: 300px;
   height: 380px;
   border-radius: 5px;
@@ -128,7 +128,7 @@ a:hover {
   text-align: center;
 }
 
-#▶{
+#watchBtn{
   opacity: 90%;
   margin: 0 auto;
   width: 250px;
