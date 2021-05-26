@@ -43,6 +43,7 @@ const Popup = (props) => {
                         </div>
                         <div className="movieInfo">
                             <abbr title="Click to close">
+                                
                             <img
                                 className="smallImage"
                                 src={singleMovie.movie.image}
