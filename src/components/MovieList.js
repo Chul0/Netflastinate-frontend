@@ -42,6 +42,7 @@ const MovieList = () => {
     }
     useEffect(fetchAllMovies, [])
     
+    
 
     return(
         <div className="movieContainer">
