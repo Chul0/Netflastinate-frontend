@@ -37,15 +37,23 @@ const Popup = (props) => {
                     <dialog
                         className="popup"
                         open
-                    >
-                        <img
-                            className="smallImage"
-                            src={singleMovie.movie.image}
-                            onClick={handlePopup}
-                        />
-                        <h1>{singleMovie.movie.title}</h1>
-                        <h3>{singleMovie.movie.plot}</h3>
-                        <button onClick={()=> setRedirectToTrailer(true)}>Watch Trailer</button>
+                    >   
+                        <div className="movieTitle">
+                            <h1>{singleMovie.movie.title}</h1>
+                        </div>
+                        <div className="movieInfo">
+                            <img
+                                className="smallImage"
+                                src={singleMovie.movie.image}
+                                onClick={handlePopup}
+                            />
+                            <div className="plotButton">
+                                <h3 id="plot">{singleMovie.movie.plot}</h3>
+                                <div className="trailerBtn">
+                                    <h3 id="▶" onClick={()=> setRedirectToTrailer(true)}>Go Watch Trailer ▶</h3>
+                                </div>
+                            </div>
+                        </div>                        
                         {
                         redirectToTrailer &&
                         <Redirect to={`/movie/${singleMovie.movie.id}`} />

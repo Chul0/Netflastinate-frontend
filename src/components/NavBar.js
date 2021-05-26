@@ -8,10 +8,12 @@ const NavBar = () => {
     return(
         <nav>
             {user.id &&
-                <p>
-                    Hey {user.name.charAt(0).toUpperCase() + user.name.slice(1)}, welcome back!
+                <p 
+                style={{textAlign:"left", padding:"10px", margin:"0",backgroundColor:"black"}}>
+                    Hello {user.name.charAt(0).toUpperCase() + user.name.slice(1)}!
                 </p>
             }
+            <h1 id="home-name" style={{fontSize:"xxx-large", margin:"0 auto 30px auto"}}>NETFLASTINATE</h1>
             <Link to='/'>HOME</Link>{' | '}
 
             {user.id ?

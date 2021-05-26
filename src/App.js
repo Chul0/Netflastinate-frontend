@@ -17,8 +17,10 @@ import Popup from './components/Popup'
 function App() {
   const [user, setUser] = useContext(UserContext)
   return (
-    <div>
-      <NavBar />
+    <div className="App">
+      <div className="NavBar-container">
+        <NavBar />
+      </div>
   
       <Route 
          path="/"

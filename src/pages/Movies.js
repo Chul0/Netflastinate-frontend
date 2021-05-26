@@ -3,7 +3,9 @@ import MovieList from '../components/MovieList'
 const Movies = () => {
 
     return(
-        <MovieList />
+        <div>
+            <MovieList />
+        </div>
     )
 }
 

@@ -45,13 +45,15 @@ const MovieList = () => {
 
     return(
         <div className="movieContainer">
-            <h2 style={{margin:"2px"}}>Children & Family</h2>
-            <div className="childrenMovies" style={{margin:"2px"}}>
+            <div className="genre">
+                <h2 style={{margin:"3px"}}>Children & Family</h2>
+            </div>
+            <div className="childrenMovies">
             {
                 children.length ? 
                 children[0].map((movie) => {
                     return  <div key={movie.id}
-                                 className="children">
+                                 className="singleImage">
                                 <Link to ={`/movies/${movie.id}`}>
                                 <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
                                 </Link>
@@ -63,14 +65,15 @@ const MovieList = () => {
                 </p>
             }
             </div>
-
-            <h2 style={{margin:"2px"}}>Horror</h2>
-            <div className="horrorMovies" style={{margin:"2px"}}>
+            <div className="genre">
+                <h2 style={{margin:"3px"}}>Horror</h2>
+            </div>
+            <div className="horrorMovies">
             {
                 horror.length ? 
                 horror[0].map((movie) => {
                     return  <div key={movie.id}
-                                 className="horror">
+                                 className="singleImage">
                                 <Link to ={`/movies/${movie.id}`}>
                                 <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
                                 </Link>
@@ -83,13 +86,15 @@ const MovieList = () => {
             }
             </div>
 
-            <h2 style={{margin:"2px"}}>Romance</h2>
-            <div className="romanceMovies" style={{margin:"2px"}}>
+            <div className="genre">
+                <h2 style={{margin:"3px"}}>Romance</h2>
+            </div>
+            <div className="romanceMovies">
             {
                 romance.length ?
                 romance[0].map((movie) => {
                     return  <div key={movie.id}
-                                 className="romance">
+                                 className="singleImage">
                                 <Link to ={`/movies/${movie.id}`}>
                                 <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
                                 </Link>
@@ -99,14 +104,15 @@ const MovieList = () => {
             <p>Loading...</p>
             }
             </div>
-
-            <h2 style={{margin:"2px"}}>Thriller</h2>
-            <div className="thrillerMovies" style={{margin:"2px"}}>
+            <div className="genre">
+                <h2 style={{margin:"3px"}}>Thriller</h2>
+            </div>
+            <div className="thrillerMovies">
             {
                 thriller.length ?
                 thriller[0].map((movie) => {
                     return  <div key={movie.id}
-                                 className="thriller">
+                                 className="singleImage">
                                 <Link to ={`/movies/${movie.id}`}>
                                 <img src={movie.image} style={{width:"180px", height:"200px", margin:"2px"}} />
                                 </Link>
