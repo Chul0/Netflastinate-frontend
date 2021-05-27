@@ -39,19 +39,24 @@ const MyList = () => {
 
     return(
         <div className="myList-container">
-            {
-                savedMovies.length ?
-                savedMovies.map((movie) => {
-                    return <div key={movie.id}>
-                                <img src={movie.image} style={{width:"300px", height:"250px"}}/>
-                                <button onClick={ () => deleteMovie(movie.id)}>delete</button>
-                           </div>
-                })
-            :
-                <p>
-                    You haven't added any movies!
-                </p>
-            }
+            <div className="myListTitle">
+                <h1>MY LIST</h1>
+            </div>
+            <div className="list-container">
+                {
+                    savedMovies.length ?
+                    savedMovies.map((movie) => {
+                        return <div className="eachPoster" key={movie.id}>
+                                    <img className="myListPoster" src={movie.image} style={{width:"250px", height:"320px", margin:"10px"}}/>
+                                    <p className="deleteList" onClick={ () => deleteMovie(movie.id)}>delete</p>
+                            </div>
+                    })
+                :
+                    <p>
+                        You haven't added any movies!
+                    </p>
+                }
+            </div>
             
         </div>
     )

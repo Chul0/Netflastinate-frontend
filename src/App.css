@@ -161,7 +161,7 @@ a:hover {
 }
 
 .trailer-container img{
-  width:300px;
+  width: 300px;
   height: 400px;
   margin: 20px;
 }
@@ -284,4 +284,40 @@ a:hover {
   padding: 1px;
   text-align: center;
   cursor: pointer;
+}
+
+.myList-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(67, 66, 66);
+  align-items: center;
+  padding: 20px 0 50px 0;
+}
+
+.list-container {
+  display: flex;
+  width: 1080px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+}
+
+.eachPoster {
+  display: flex;
+  flex-direction: column;
+}
+
+.deleteList{
+  margin: 10px auto 30px auto;
+  width: 250px;
+  padding: 5px 0 5px 0;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 5px;
+}
+
+.deleteList:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.378);
 }
