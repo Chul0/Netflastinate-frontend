@@ -349,7 +349,7 @@ a:hover {
   text-align: left;
 }
 
-.formInput{
+.formInput, .profile-container input{
   width: 100%;
   margin-top: 10px;
   height: 2.5em;
