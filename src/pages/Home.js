@@ -1,9 +1,11 @@
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
+import { useState, useContext } from 'react'
+import { UserContext } from '../contexts/UserContext'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-   
+    const [user, setUser] = useContext(UserContext)
 
     return(
         <div className="homePage">
@@ -22,9 +24,14 @@ const Home = () => {
       />
       <div className="homeMessage">
           <h1>Ready to netflastinate?</h1>
-          <Link to="/login">
-            <p>JOIN NOW</p>
-          </Link>
+        
+      {!user.id &&
+        <div className="joinBtn">
+            <Link to="/login">
+                <p>JOIN NOW</p>
+            </Link>
+        </div>
+      }
       </div>
       </div>
     )

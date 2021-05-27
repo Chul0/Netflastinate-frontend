@@ -16,6 +16,7 @@ import Popup from './components/Popup'
 
 function App() {
   const [user, setUser] = useContext(UserContext)
+  
   return (
     <div className="App">
       <div className="NavBar-container">
