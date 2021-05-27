@@ -53,7 +53,7 @@ const Popup = (props) => {
                             <div className="plotButton">
                                 <h3 id="plot">{singleMovie.movie.plot}</h3>
                                 <div className="trailerBtn">
-                                    <h3 className="▶" onClick={()=> setRedirectToTrailer(true)}>Go Watch Trailer ▶</h3>
+                                    <h3 className="watchButton" onClick={()=> setRedirectToTrailer(true)}>Watch Trailer ▶</h3>
                                 </div>
                             </div>
                         </div>                        

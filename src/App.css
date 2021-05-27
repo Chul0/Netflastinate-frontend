@@ -126,7 +126,7 @@ a:hover {
   text-align: center;
 }
 
-.▶{
+.watchButton{
   margin: 0 auto;
   width: 250px;
   padding: 10px 0 10px 0;
@@ -135,7 +135,7 @@ a:hover {
   border-radius: 10px;
 }
 
-.▶:hover {
+.watchButton:hover {
   cursor: pointer;
   background-color: rgba(255, 0, 0, 0.378);
 }
