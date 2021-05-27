@@ -108,20 +108,21 @@ const SingleMovie = () => {
                                             </div>
                                             <div className="singleComment">
                                             <p className="commentDescription">{comment.description}</p>
-                                            {user.id === comment.user.id &&
-                                                <>
-                                                { showCommentEdit ?
-                                                    <CommentEditForm setShouldReload={setShouldReload}
-                                                    commentId={comment.id}
-                                                    setShowCommentEdit={setShowCommentEdit} />
-                                                :
-                                                    <div className="editFormBtn">
-                                                    <p className="comment-edit" onClick={handleCommentEdit}>EDIT</p>
-                                                    <p className="comment-edit" onClick={() => deleteComment(comment.id)}>DELETE</p>
-                                                    </div>
+                                            {/* If user.id and comment user id match, show edit/delete buttons */}
+                                                {user.id === comment.user.id &&
+                                                    <>
+                                                    { showCommentEdit ?
+                                                        <CommentEditForm setShouldReload={setShouldReload}
+                                                        commentId={comment.id}
+                                                        setShowCommentEdit={setShowCommentEdit} />
+                                                    :
+                                                        <div className="editFormBtn">
+                                                        <p className="comment-edit" onClick={handleCommentEdit}>EDIT</p>
+                                                        <p className="comment-edit" onClick={() => deleteComment(comment.id)}>DELETE</p>
+                                                        </div>
+                                                    }
+                                                    </>
                                                 }
-                                                </>
-                                            }
                                             </div>
                                         </div>    
 

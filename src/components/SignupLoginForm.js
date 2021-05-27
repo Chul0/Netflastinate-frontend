@@ -53,6 +53,7 @@ const SignupLoginForm = (props) => {
                     <div className="btnDiv">
                      <input class="submit-button" type="submit" value={props.buttonText} />
                     </div>
+                    {/* Show this only in login page */}
                     {props.notAMember &&
                         <div className="signupLink">
                             <Link to="/signup">
@@ -60,6 +61,7 @@ const SignupLoginForm = (props) => {
                             </Link>
                         </div>
                     }
+                    {/* Show this only in signup page */}
                     {props.alreadyAMember &&
                         <div className="signupLink">
                             <Link to="/login">

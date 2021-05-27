@@ -58,24 +58,24 @@
 | POST   | /users                 | Sign-up                                |
 | POST   | /users/login           | Log-in                                 |
 | PUT    | /users/profile         | Edit user profile info                 |use auth headers for userId |
-| DELETE | /users/                | Delete user account                    | use auth headers for userId|
+| DELETE | /users/profile         | Delete user account                    | use auth headers for userId|
 
 
 [Movie] * /:id/ refers to the id of whatever that comes before /:id/ *
 | Method | Path                   | Purpose                         | Note                                    |
 |--------|------------------------|---------------------------------|-----------------------------------------|
 | GET    | /movies                | Get movie list from api         | 
-| GET    | /movie/:id             | Movie detail and comments       |Fetch movie detail, and include comments |   
-| POST   | /movie/:id             | User can save movies            |
-| DELETE | /movie/:id             | User can delete saved movies    |
+| GET    | /movies/:id             | Movie detail and comments       |Fetch movie detail, and include comments |   
+| POST   | /movies/:id             | User can save movies            |
+| DELETE | /movies/:id             | User can delete saved movies    |
 
 
 [Comment]
-| Method | Path                   | Purpose                         |
-|--------|------------------------|---------------------------------|
-| POST   | /movie/:id/comments    | Leave comments                  |
-| PUT    | /movie/:id/comments    | Edit comments                   |
-| DELETE | /movie/:id/comments    | Delete comments                 |
+| Method | Path                           | Purpose                         |
+|--------|--------------------------------|---------------------------------|
+| POST   | /movies/:id/comment/:commentId | Leave comments                  |
+| PUT    | /movies/:id/comment/:commentId | Edit comments                   |
+| DELETE | /movie/:id/commens/:commentId  | Delete comments                 |
 
 
 </details>
@@ -87,11 +87,10 @@
 
 ### Stretch goals
 - Can I delete saved movies from my list?
-- Can I leave/edit/delete comments?
+- Can I leave/edit/delete my comments?
 - Can I see my profile and edit/delete it?
-- Can I search for a movie through a search bar?
-- Can I see movie list slide show?
-- If I click a movie from my list, it takes me to movie detail page
+- Can I see a loading screen?
+- If I click a movie from my list, it takes me to movie detail page.
 </details>
 
 ## Work flow
