@@ -31,26 +31,31 @@ const SignupLoginForm = (props) => {
     }
 
     return(
-        <div>
-            <h1>{props.title}</h1>
-            {error && 
-            <p style={{color:"red"}}>{error}</p>
-            }
-            <form onSubmit={handleSubmit}>
-                {props.showName &&
-                <>
-                 <label htmlFor="new-name"><h2>NAME</h2></label>
-                 <input value={name} onChange={(e)=> {setName(e.target.value)}} />
-                </>
+        <div className="signupFormPage">
+
+            <div className="SingupLoginForm-container">
+                <h1>{props.title}</h1>
+                {error && 
+                <p style={{color:"red"}}>{error}</p>
                 }
+                <form onSubmit={handleSubmit}>
+                    {props.showName &&
+                    <>
+                    <label htmlFor="new-name"><h2>NAME</h2></label>
+                    <input className="formInput" value={name} onChange={(e)=> {setName(e.target.value)}} />
+                    </>
+                    }
 
-                <label htmlFor="new-email"><h2>EMAIL</h2></label>
-                <input value={email} onChange={(e)=> {setEmail(e.target.value)}} />
-                <label htmlFor="new-password"><h2>PASSWORD</h2></label>
-                <input type="password" value={password} onChange={(e)=> {setPassword(e.target.value)}} />
-                <input id="submit-button" type="submit" value={props.buttonText} />
+                    <label htmlFor="new-email"><h2>EMAIL</h2></label>
+                    <input className="formInput" value={email} onChange={(e)=> {setEmail(e.target.value)}} />
+                    <label htmlFor="new-password"><h2>PASSWORD</h2></label>
+                    <input className="formInput" type="password" value={password} onChange={(e)=> {setPassword(e.target.value)}} />
+                    <div className="btnDiv">
+                     <input class="submit-button" type="submit" value={props.buttonText} />
+                    </div>
 
-            </form>
+                </form>
+            </div>
         </div>
     )
 }

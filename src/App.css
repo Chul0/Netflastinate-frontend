@@ -322,7 +322,7 @@ a:hover {
   background-color: rgba(255, 0, 0, 0.378);
 }
 
-.profilePage {
+.profilePage, .signupFormPage {
   background-color: rgb(67, 66, 66);
   height: 700px;
   padding: 30px;
@@ -349,7 +349,7 @@ a:hover {
   text-align: left;
 }
 
-.profile-container input, .SingupLoginForm-container input{
+.formInput{
   width: 100%;
   margin-top: 10px;
   height: 2.5em;
@@ -390,6 +390,24 @@ a:hover {
   font-weight: bold;
   cursor: pointer;
   background-color: red;
+  color:white;
+  border-radius: 5px;
+}
+
+.btnDiv{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.submit-button {
+  width: 90px;
+  height: 40px;
+  padding: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: black;
   color:white;
   border-radius: 5px;
 }
