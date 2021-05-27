@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 const MyList = () => {
@@ -47,7 +48,9 @@ const MyList = () => {
                     savedMovies.length ?
                     savedMovies.map((movie) => {
                         return <div className="eachPoster" key={movie.id}>
+                                <Link to={`/movie/${movie.id}`}>
                                     <img className="myListPoster" src={movie.image} style={{width:"250px", height:"320px", margin:"10px"}}/>
+                                </Link>
                                     <p className="deleteList" onClick={ () => deleteMovie(movie.id)}>delete</p>
                             </div>
                     })
