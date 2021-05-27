@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import LoadingBar from './LoadingBar'
 
 
 
@@ -61,9 +62,8 @@ const MovieList = () => {
                             </div>
                 })
             :
-                <p>
-                    Loading...
-                </p>
+                <LoadingBar />
+                
             }
             </div>
             <div className="genre">
@@ -81,9 +81,7 @@ const MovieList = () => {
                             </div>
                 })
             :
-                <p>
-                    Loading...
-                </p>
+                null
             }
             </div>
 
@@ -102,7 +100,7 @@ const MovieList = () => {
                             </div>
                 })
             :
-            <p>Loading...</p>
+            null
             }
             </div>
             <div className="genre">
@@ -120,7 +118,7 @@ const MovieList = () => {
                             </div>
                 })
             :
-            <p>Loading...</p>
+            null
             }
             </div>
             
