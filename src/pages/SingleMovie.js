@@ -65,8 +65,8 @@ const SingleMovie = () => {
                 <div className="trailer-container">
                     <div className="title" style={{margin:"0"}}>
                         <h1 style={{fontSize:"50px", textAlign:"left"}}>{movieInfo.movie.title}</h1>
-                    </div>
                         <h3 className="save" onClick={saveMovies}>Save to my list</h3>
+                    </div>
                     <div className="posterVid-container">
                         <img src={movieInfo.movie.image}></img>
                         {/* <h3>{movieInfo.movie.plot}</h3> */}

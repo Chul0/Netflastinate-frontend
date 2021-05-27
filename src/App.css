@@ -57,6 +57,7 @@ a:hover {
 }
 .singleImage img{
   border-radius: 5px;
+  /* object-fit: cover; */
 }
 
 .genre{
@@ -173,6 +174,9 @@ a:hover {
 
 .title {
   width: 1040px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .trailerVid {
   margin:20px
@@ -189,7 +193,7 @@ a:hover {
   background-color: rgb(255, 0, 0);
   color: white;
   border-radius: 10px;
-  position: absolute;
+  /* position: absolute; */
   top: 190px;
   left: 980px;
 }
