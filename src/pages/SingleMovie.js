@@ -12,6 +12,7 @@ const SingleMovie = () => {
     const [movieInfo, setMovieInfo] = useState({})
     const [shouldReload, setShouldReload] = useState(true)
     const [showCommentEdit, setShowCommentEdit] = useState(false)
+    const [saved, setSaved] = useState(false)
 
 
     //Get a selected movie info
@@ -36,6 +37,7 @@ const SingleMovie = () => {
             }
         }
         )
+        setSaved(true)
     }
 
     //To show comment editing form
@@ -56,6 +58,8 @@ const SingleMovie = () => {
         })
     }
 
+
+
     return(
         <div className="singleMovie-page" >
             <div className="movie-info">
@@ -65,7 +69,11 @@ const SingleMovie = () => {
                 <div className="trailer-container">
                     <div className="title" style={{margin:"0"}}>
                         <h1 style={{fontSize:"50px", textAlign:"left"}}>{movieInfo.movie.title}</h1>
+                        {!saved ? 
                         <h3 className="save" onClick={saveMovies}>Save to my list</h3>
+                        :
+                        <p>Saved ✓</p>
+                        }
                     </div>
                     <div className="posterVid-container">
                         <img src={movieInfo.movie.image}></img>
