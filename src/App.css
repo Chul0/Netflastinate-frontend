@@ -204,6 +204,7 @@ a:hover {
   width:100%;
   margin-top: 20px;
   background-color: black;
+  padding-bottom: 30px;
 }
 .commentForm-container{
   display: flex;
@@ -219,17 +220,19 @@ a:hover {
   color: white;
 }
 
-#comment-input{
+.comment-input{
   margin-top: 10px;
   width: 950px;
   height: 2em;
 }
 
-#comment-submit {
+.comment-submit {
   padding: 6px;
   margin-left: 10px;
   font-weight: bold;
   cursor: pointer;
+  background-color: black;
+  color:white;
   
 }
 
@@ -269,6 +272,16 @@ a:hover {
   flex-direction: column;
 }
 
-.editFormBtn button{
+.editFormBtn{
+  display: flex;
+  text-align: center;
+}
+
+.comment-edit{
+  margin-right: 10px;
+  border: solid 1px grey;
   width: 70px;
+  padding: 1px;
+  text-align: center;
+  cursor: pointer;
 }

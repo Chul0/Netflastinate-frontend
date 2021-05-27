@@ -108,8 +108,8 @@ const SingleMovie = () => {
                                                     setShowCommentEdit={setShowCommentEdit} />
                                                 :
                                                     <div className="editFormBtn">
-                                                    <button onClick={handleCommentEdit}>EDIT</button>
-                                                    <button onClick={() => deleteComment(comment.id)}>DELETE</button>
+                                                    <p className="comment-edit" onClick={handleCommentEdit}>EDIT</p>
+                                                    <p className="comment-edit" onClick={() => deleteComment(comment.id)}>DELETE</p>
                                                     </div>
                                                 }
                                                 </>

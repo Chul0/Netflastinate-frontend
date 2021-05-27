@@ -26,8 +26,8 @@ const CommentEditForm = (props) => {
     return(
         <form onSubmit={handleEdit}>
             <label htmlFor="description"></label>
-            <input id="comment-input" placeholder="Edit your comment" value={description} onChange={ (e)=> {setDescription(e.target.value)}}></input>
-            <input id="comment-submit" type="submit" value="EDIT" />
+            <input className="comment-input" placeholder="Edit your comment" value={description} onChange={ (e)=> {setDescription(e.target.value)}}></input>
+            <input className="comment-submit" type="submit" value="EDIT" />
         </form>
     )
 }
