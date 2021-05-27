@@ -68,7 +68,7 @@ const Profile = () => {
     }
 
     return(
-        <>
+        <div className="profilePage">
         <div className="profile-container">
             <h1>PROFILE SETTING</h1>
             { shouldRedirect && <Redirect to={'/'} /> }
@@ -89,10 +89,10 @@ const Profile = () => {
                 </div>
             </form>
             <div className="buttons-div">
-                <button onClick={handleSubmit}>EDIT</button>
-                <button onClick={handleShowPopup}>DELETE</button>
+                <p id="profileEdit" onClick={handleSubmit}>EDIT</p>
+                <p id="profileDelete" onClick={handleShowPopup}>DELETE</p>
             </div>
-            <>
+            <div>
             {popup && (
                         
                 <dialog
@@ -108,10 +108,10 @@ const Profile = () => {
                         </div>
                 </dialog>
                     )}
-            </>
+            </div>
         
          </div>
-    </>
+    </div>
     )
 }
 
