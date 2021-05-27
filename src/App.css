@@ -126,7 +126,7 @@ a:hover {
   text-align: center;
 }
 
-#▶{
+.▶{
   margin: 0 auto;
   width: 250px;
   padding: 10px 0 10px 0;
@@ -135,8 +135,9 @@ a:hover {
   border-radius: 10px;
 }
 
-#▶:hover {
+.▶:hover {
   cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.378);
 }
 
 
@@ -146,3 +147,128 @@ a:hover {
   height: 400px;
 }
 
+.trailer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(67, 66, 66);
+  align-items: center;
+}
+
+.trailer-container h1{
+  margin-left:0;
+  left:10px;
+}
+
+.trailer-container img{
+  width:300px;
+  height: 400px;
+  margin: 20px;
+}
+
+.posterVid-container{
+  width: 1100px;
+  height: 480px;
+}
+
+.title {
+  width: 1040px;
+}
+.trailerVid {
+  margin:20px
+}
+
+.save-container{
+  display: flex;
+  width: 1100px;
+}
+.save{
+  width: 180px;
+  height: 20px;
+  padding: 5px 0 5px 0;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 190px;
+  left: 980px;
+}
+
+.save:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.378);
+}
+
+
+.footer{
+  width:100%;
+  margin-top: 20px;
+  background-color: black;
+}
+.commentForm-container{
+  display: flex;
+  flex-direction: column;
+  width: 1050px;
+  background-color: black;
+  color: white;
+  margin: auto;
+}
+
+.commentForm-container form{
+  background-color: black;
+  color: white;
+}
+
+#comment-input{
+  margin-top: 10px;
+  width: 950px;
+  height: 2em;
+}
+
+#comment-submit {
+  padding: 6px;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.comment-container{
+  text-align: left;
+  margin-left: 20px;
+}
+
+/* .comment-container p{
+  border-bottom: 1px solid white;
+} */
+
+.showComments {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentName{
+  margin: 10px 10px 0 0;
+  font-weight: bold;
+}
+
+.commentDate {
+  color:rgb(193, 193, 193);
+  margin:10px 0;
+}
+
+.commentDescription{
+  margin: 0;
+  font-weight: bold;
+  /* border: 1px white solid; */
+  width: 910px;
+}
+
+.singleComment {
+  display: flex;
+  flex-direction: column;
+}
+
+.editFormBtn button{
+  width: 70px;
+}
