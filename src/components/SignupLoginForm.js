@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useContext } from 'react'
-
+import { Link } from 'react-router-dom'
 
 
 const SignupLoginForm = (props) => {
@@ -32,7 +32,7 @@ const SignupLoginForm = (props) => {
 
     return(
         <div className="signupFormPage">
-
+            
             <div className="SingupLoginForm-container">
                 <h1>{props.title}</h1>
                 {error && 
@@ -53,6 +53,20 @@ const SignupLoginForm = (props) => {
                     <div className="btnDiv">
                      <input class="submit-button" type="submit" value={props.buttonText} />
                     </div>
+                    {props.notAMember &&
+                        <div className="signupLink">
+                            <Link to="/signup">
+                                <p>Not a member yet?</p>
+                            </Link>
+                        </div>
+                    }
+                    {props.alreadyAMember &&
+                        <div className="signupLink">
+                            <Link to="/login">
+                                <p>Already a member?</p>
+                            </Link>
+                        </div>
+                    }
 
                 </form>
             </div>

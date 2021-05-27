@@ -9,6 +9,7 @@ const Login = () => {
         //this route value will be passed to SignupLoginForm
         message="Welcome back!"
         title="LOGIN"
+        notAMember={true}
         />
     )
 }

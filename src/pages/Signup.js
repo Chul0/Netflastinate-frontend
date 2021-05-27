@@ -9,6 +9,7 @@ const Signup = (props) => {
         route="/users"
         message="You are successfully signed up!"
         title="SIGN UP"
+        alreadyAMember={true}
         />
     )
 }
