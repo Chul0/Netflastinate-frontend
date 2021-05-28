@@ -18,7 +18,7 @@ const SignupLoginForm = (props) => {
             password
         })
         .then((response) => {
-            console.log(response);
+            // console.log(response);
             if(response.data.user){
                  localStorage.setItem('userId', response.data.userId)
                 alert(`Hi, ${response.data.user.name}! ${props.message}`)
