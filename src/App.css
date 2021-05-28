@@ -322,6 +322,7 @@ a:hover {
   background-color: rgb(255, 0, 0);
   color: white;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .deleteList:hover {
