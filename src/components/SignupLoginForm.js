@@ -33,11 +33,11 @@ const SignupLoginForm = (props) => {
     return(
         <div className="signupFormPage">
             
+                {error && 
+                <p className="errorMsg" style={{color:"red"}}>*{error}</p>
+                }
             <div className="SingupLoginForm-container">
                 <h1>{props.title}</h1>
-                {error && 
-                <p style={{color:"red"}}>{error}</p>
-                }
                 <form onSubmit={handleSubmit}>
                     {props.showName &&
                     <>

@@ -467,7 +467,7 @@ a:hover {
 
 }
 
-.loadingContainer p {
+.loadingContainer p{
  font-size: 30px;
  font-family: serif;
  margin: 250px auto;
@@ -483,4 +483,8 @@ a:hover {
   50% {
     color: black;
   }
+}
+
+.errorMsg {
+  font-size: 20px;
 }
